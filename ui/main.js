@@ -9,9 +9,9 @@ element.innerHTML='new value';
 var element=document.getElementById('vishal');
 var marginLeft=0;
 function moveRight(){
-    marginLeft=marginLeft+10;
+    marginLeft=marginLeft+2;
     vishal.style.marginLeft=marginLeft+'px';
 }
 vishal.onclick= function() {
-  var interval=setInterval(moveRight, 100);  
+  var interval=setInterval(moveRight, 50);  
 };

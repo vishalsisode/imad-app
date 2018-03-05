@@ -8,5 +8,5 @@ element.innerHTML='new value';
 //move the image
 var element=document.getElementById('vishal');
 vishal.onclick= function() {
-  vishal.style.marginLeft= '100px';  
+  var interval=setInterval(moveRight, 100);  
 };

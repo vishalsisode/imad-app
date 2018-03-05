@@ -7,6 +7,6 @@ element.innerHTML='new value';
 
 //move the image
 var element=document.getElementById('vishal');
-img.onclick= function() {
-  img.style.marginLeft= '100px';  
+vishal.onclick= function() {
+  vishal.style.marginLeft= '100px';  
 };

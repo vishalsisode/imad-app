@@ -5,22 +5,52 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne={
-  title:  'Article one I Vishal Sisode',
-  heading: 'Article one',
-  date: 'March 5,2018',
-  content: `
-  <p>
-          This is my first article of web. This is my first article of web. This is my first article of web. This is my first article of web. This is my first article of web. This is my first article of web.
-  </p>
-   <p>
+var articles={
+   'article-one':{
+     title:  'Article one I Vishal Sisode',
+     heading: 'Article one',
+     date: 'March 5,2018',
+     content: `
+       <p>
            This is my first article of web. This is my first article of web. This is my first article of web. This is my first article of web. This is my first article of web. This is my first article of web.
-   </p>
-    <p>
-            This is my first article of web. This is my first article of web. This is my first article of web. This is my first article of web. This is my first article of web. This is my first article of web.    
-    </p>`
-};
+       </p>
+       <p>
+           This is my first article of web. This is my first article of web. This is my first article of web. This is my first article of web. This is my first article of web. This is my first article of web.
+       </p>
+       <p>
+             This is my first article of web. This is my first article of web. This is my first article of web. This is my first article of web. This is my first article of web. This is my first article of web.    
+       </p>`
+    },//article 1 end
+    
+ //article two start here   
+    
+     'article-two':{
+     title:  'Article two I Vishal Sisode',
+     heading: 'Article two',
+     date: 'March 10,2018',
+     content: `
+       <p>
+           This is my second article of web. 
+       </p>`
+             
+    },//article 2 end
+ 
+  //article three start here 
+  
+     'article-three':{
+     title:  'Article three I Vishal Sisode',
+     heading: 'Article three',
+     date: 'March 15,2018',
+     content: `
+       <p>
+           This is my third article of web. 
+       </p>`
+             
+    }//article 3 end
+    
+};//end articles
 
+// function start here
 function createTemplate(data){
     var title= data.title;
     var heading=data.heading;
@@ -57,12 +87,17 @@ var htmlTemplate= `
 `;
      return htmlTemplate;
 }
+//function end
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res) {
- res.send(createTemplate(articleOne));
+app.get('/:articleName', function (req, res) {
+ //articleName= article-one
+ //articles[articleName]== {} content object for article one
+ res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/article-two', function (req, res) {

@@ -7,6 +7,11 @@ element.innerHTML='new value';
 
 //move the image
 var element=document.getElementById('vishal');
+var marginLeft=0;
+function moveRight(){
+    marginLeft=marginLeft+10;
+    vishal.style.marginLeft=marginLeft+'px';
+}
 vishal.onclick= function() {
   var interval=setInterval(moveRight, 100);  
 };

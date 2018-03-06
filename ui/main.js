@@ -1,17 +1,16 @@
-console.log('Loaded!');
-
-//change the text of main-text div
-var element=document.getElementById('main-text');
-
-element.innerHTML='new value';
-
-//move the image
-var element=document.getElementById('vishal');
-var marginLeft=0;
-function moveRight(){
-    marginLeft=marginLeft+2;
-    vishal.style.marginLeft=marginLeft+'px';
-}
-vishal.onclick= function() {
-  var interval=setInterval(moveRight, 50);  
+//counter code
+var button=document.getElementById("counter");
+var counter=0;
+button.onclick=function(){
+    
+   //make request to counter endpoint
+    
+    //capture the response and store it in a variable
+    
+    //render the variable in a correct span
+    counter=counter+1;
+var span=document.getElementById("count");
+span.innerHTML=counter.toString();
+    
+    
 };
